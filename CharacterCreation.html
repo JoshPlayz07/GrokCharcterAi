@@ -7,28 +7,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
         
-        body { font-family: 'Inter', system_ui, sans-serif; }
+        body { 
+            font-family: 'Inter', system_ui, sans-serif; 
+            overflow-x: hidden;
+        }
         .title-font { font-family: 'Space Grotesk', sans-serif; }
         .preview-content { font-family: ui-monospace, monospace; white-space: pre-wrap; line-height: 1.65; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 min-h-screen">
-    <div class="max-w-2xl mx-auto">
-        <div class="bg-zinc-900 border-b border-pink-500/30 px-6 py-6 sticky top-0 z-50">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-2xl">🖤</div>
-                    <div>
-                        <h1 class="title-font text-3xl font-semibold tracking-tighter">Character Forge</h1>
-                        <p class="text-pink-400 text-sm -mt-1">Uncensored RP for Grok</p>
-                    </div>
+    
+    <!-- Navbar -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">🖤</div>
+                <span class="title-font text-2xl font-bold tracking-tighter hidden sm:block">Forge</span>
+            </div>
+            
+            <div class="flex items-center gap-12 text-sm font-medium">
+                <a href="index.html" class="hover:text-pink-400 transition-colors py-1">Home</a>
+                <a href="CharacterCreation.html" class="text-pink-400 font-semibold py-1">Create Character</a>
+                <a href="agent-creator.html" class="hover:text-pink-400 transition-colors py-1">Browse Characters</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-2xl mx-auto pt-8">
+        <div class="px-6">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl">🖤</div>
+                <div>
+                    <h1 class="title-font text-4xl font-semibold tracking-tighter">Character Forge</h1>
+                    <p class="text-pink-400">Uncensored RP for Grok</p>
                 </div>
             </div>
         </div>
 
-        <div class="p-6 pb-28">
+        <div class="p-6">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <!-- Form -->
                 <div class="lg:col-span-3 space-y-8">
@@ -196,12 +214,10 @@ ${data.background || "No additional details provided."}
             });
         }
 
-        // Auto update
         document.querySelectorAll('input, textarea').forEach(el => {
             el.addEventListener('input', updatePreview);
         });
 
-        // Initialize
         window.onload = () => {
             updatePreview();
         };
