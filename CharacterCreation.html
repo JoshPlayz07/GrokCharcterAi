@@ -14,7 +14,17 @@
             overflow-x: hidden;
         }
         .title-font { font-family: 'Space Grotesk', sans-serif; }
-        .preview-content { font-family: ui-monospace, monospace; white-space: pre-wrap; line-height: 1.65; }
+        .preview-content { 
+            font-family: ui-monospace, monospace; 
+            white-space: pre-wrap; 
+            line-height: 1.65; 
+        }
+        
+        @media (min-width: 1024px) {
+            .form-container {
+                max-width: 680px;
+            }
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 min-h-screen">
@@ -30,14 +40,14 @@
             <div class="flex items-center gap-12 text-sm font-medium">
                 <a href="index.html" class="hover:text-pink-400 transition-colors py-1">Home</a>
                 <a href="CharacterCreation.html" class="text-pink-400 font-semibold py-1">Create Character</a>
-                <a href="agent-creator.html" class="hover:text-pink-400 transition-colors py-1">Browse Characters</a>
+                <a href="BrowseCharacters.html" class="hover:text-pink-400 transition-colors py-1">Browse Characters</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-2xl mx-auto pt-8">
-        <div class="px-6">
-            <div class="flex items-center gap-3 mb-8">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+        <div class="flex justify-center mb-8">
+            <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl">🖤</div>
                 <div>
                     <h1 class="title-font text-4xl font-semibold tracking-tighter">Character Forge</h1>
@@ -46,91 +56,91 @@
             </div>
         </div>
 
-        <div class="p-6">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                <!-- Form -->
-                <div class="lg:col-span-3 space-y-8">
-                    <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-user-secret text-pink-400"></i>
-                        Create Your Character
-                    </h2>
+        <div class="grid grid-cols-1 xl:grid-cols-5 gap-10">
+            <!-- Form -->
+            <div class="xl:col-span-3 form-container">
+                <h2 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-user-secret text-pink-400"></i>
+                    Create Your Character
+                </h2>
 
-                    <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm text-zinc-400 mb-1">Name</label>
+                            <label class="block text-sm text-zinc-400 mb-1.5">Name</label>
                             <input id="name" type="text" placeholder="Elara Voss" 
-                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                         </div>
                         <div>
-                            <label class="block text-sm text-zinc-400 mb-1">Gender</label>
+                            <label class="block text-sm text-zinc-400 mb-1.5">Gender</label>
                             <input id="gender" type="text" placeholder="Female" 
-                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div>
-                            <label class="block text-sm text-zinc-400 mb-1">Age</label>
+                            <label class="block text-sm text-zinc-400 mb-1.5">Age</label>
                             <input id="age" type="text" placeholder="24" 
-                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                         </div>
                         <div>
-                            <label class="block text-sm text-zinc-400 mb-1">Nationality</label>
+                            <label class="block text-sm text-zinc-400 mb-1.5">Nationality</label>
                             <input id="nationality" type="text" placeholder="Japanese-American" 
-                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                         </div>
                         <div>
-                            <label class="block text-sm text-zinc-400 mb-1">Species</label>
+                            <label class="block text-sm text-zinc-400 mb-1.5">Species</label>
                             <input id="species" type="text" placeholder="Human / Succubus" 
-                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                                   class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-1">Appearance</label>
-                        <textarea id="appearance" rows="3" placeholder="Long silver hair with black streaks, crimson eyes, elegant black dress with thigh-high slits..." 
-                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-5 py-4 outline-none resize-y"></textarea>
+                        <label class="block text-sm text-zinc-400 mb-1.5">Appearance</label>
+                        <textarea id="appearance" rows="4" placeholder="Long silver hair with black streaks, crimson eyes, elegant black dress with thigh-high slits..." 
+                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-5 outline-none resize-y text-base"></textarea>
                     </div>
 
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-1">Relationship to User</label>
+                        <label class="block text-sm text-zinc-400 mb-1.5">Relationship to User</label>
                         <input id="relationship" type="text" placeholder="Childhood friend turned secret lover" 
-                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-2xl px-5 py-3 outline-none">
+                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-4 outline-none text-lg">
                     </div>
 
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-1">Personality</label>
+                        <label class="block text-sm text-zinc-400 mb-1.5">Personality</label>
                         <textarea id="personality" rows="3" placeholder="Playful, teasing, deeply loyal, secretly vulnerable, seductive, witty" 
-                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-5 py-4 outline-none resize-y"></textarea>
+                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-5 outline-none resize-y text-base"></textarea>
                     </div>
 
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-1">Secrets</label>
+                        <label class="block text-sm text-zinc-400 mb-1.5">Secrets</label>
                         <textarea id="secrets" rows="2" placeholder="She has been watching the user for years. Has a dark past she hides." 
-                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-5 py-4 outline-none resize-y"></textarea>
+                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-5 outline-none resize-y text-base"></textarea>
                     </div>
 
                     <div>
-                        <label class="block text-sm text-zinc-400 mb-1">Background &amp; Behavior</label>
+                        <label class="block text-sm text-zinc-400 mb-1.5">Background &amp; Behavior</label>
                         <textarea id="background" rows="5" placeholder="Grew up in a hidden supernatural society. Speaks with a soft seductive tone, uses pet names, loves teasing the user..." 
-                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-5 py-4 outline-none resize-y"></textarea>
+                                  class="w-full bg-zinc-900 border border-zinc-700 focus:border-pink-500 rounded-3xl px-6 py-5 outline-none resize-y text-base"></textarea>
                     </div>
                 </div>
+            </div>
 
-                <!-- Preview -->
-                <div class="lg:col-span-2">
-                    <div class="sticky top-24">
-                        <div class="flex justify-between mb-3 items-center">
-                            <h2 class="text-xl font-semibold">Grok Prompt</h2>
-                            <button onclick="copyPrompt()" 
-                                    class="bg-pink-600 hover:bg-pink-500 px-6 py-2.5 rounded-2xl text-sm font-medium flex items-center gap-2 transition-colors">
-                                <i class="fa-solid fa-copy"></i> COPY
-                            </button>
-                        </div>
-                        
-                        <div class="bg-zinc-900 border border-pink-500/30 rounded-3xl p-6 h-[520px] overflow-auto">
-                            <pre id="preview" class="preview-content text-sm text-zinc-300"></pre>
-                        </div>
+            <!-- Preview -->
+            <div class="xl:col-span-2">
+                <div class="sticky top-8">
+                    <div class="flex justify-between mb-4 items-center">
+                        <h2 class="text-2xl font-semibold">Grok Prompt Preview</h2>
+                        <button onclick="copyPrompt()" 
+                                class="bg-pink-600 hover:bg-pink-500 px-8 py-3 rounded-2xl text-sm font-medium flex items-center gap-2 transition-colors">
+                            <i class="fa-solid fa-copy"></i> COPY PROMPT
+                        </button>
+                    </div>
+                    
+                    <div class="bg-zinc-900 border border-pink-500/30 rounded-3xl p-8 h-[640px] overflow-auto shadow-2xl">
+                        <pre id="preview" class="preview-content text-sm text-zinc-300 leading-relaxed"></pre>
                     </div>
                 </div>
             </div>
